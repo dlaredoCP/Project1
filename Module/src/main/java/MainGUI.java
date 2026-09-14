@@ -11,6 +11,7 @@ public class MainGUI extends JFrame {
 
     private JTextArea outputArea;
 
+    /** CODE HERE */
     // there should be a private member variable named `sessions` :
     // private SomethingOrOther sessions;
 
@@ -105,6 +106,7 @@ public class MainGUI extends JFrame {
             String location = locationField.getText();
             int maxParticipants = Integer.parseInt(maxField.getText());
 
+            /** CODE HERE */
             // TO DO: construct a session object, insert it into
             // the list of sessions
 
@@ -136,6 +138,7 @@ public class MainGUI extends JFrame {
         // Search by ID if the ID field is not empty
         if (!idField.getText().trim().isEmpty()) {
             int id = Integer.parseInt(idField.getText().trim());
+            /** CODE HERE */
             // find session by ID, using a `searchByID` method
             // ... code here ...
             /* if (result != null)
@@ -149,6 +152,7 @@ public class MainGUI extends JFrame {
             String mentor = mentorField.getText().trim();
             // find session by mentor. In this case, the result
             // may be a list of sessions...
+            /** CODE HERE */
             // ... code here ...
             /*
             if (result != null)
@@ -168,6 +172,7 @@ public class MainGUI extends JFrame {
         int id = Integer.parseInt(idField.getText());
         // remove the session, print an error to the outputArea
         // if it's not found
+        /** CODE HERE */
         // ... code here ...
     }
 
