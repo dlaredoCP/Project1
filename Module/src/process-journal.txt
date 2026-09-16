@@ -1,0 +1,12 @@
+*Name*: Diego Laredo
+*Date of change*: September 15
+*Start time*: ~10pm
+*End time*: ~11pm
+*Description of changes*: Created Session record and brainstormed method implementations
+--------------------------------------
+*Name*: Diego Laredo
+*Date of change*: September 16
+*Start time*: 11:55am
+*End time*:  1:30pm
+*Description of changes*: Created SessionList record, Session constructor test, and custom Session constructor that throws exception error when the date is in an incorrect format. Initialized SessionList sessions as a private variable and gave it a null value in the MainGUI. Completed addSession in MainGUI by making the new addToSesh and length methods in SessionList.
+--------------------------------------

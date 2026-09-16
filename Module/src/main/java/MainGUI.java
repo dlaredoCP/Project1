@@ -14,12 +14,17 @@ public class MainGUI extends JFrame {
     /** CODE HERE */
     // there should be a private member variable named `sessions` :
     // private SomethingOrOther sessions;
+        /** first change */
+    private SessionList sessions;
 
     // the constructor for the class. This will initialize
     // the class's member variables:
     public MainGUI() {
         // set sessions to a new empty list:
         // sessions = ...
+            /** second change */
+        sessions = new SessionList(null, null);
+
         setTitle("Employee Mentorship and Inclusion Manager");
         setSize(600, 600);
         // when this frame/window closes, halt the whole program:
@@ -109,7 +114,7 @@ public class MainGUI extends JFrame {
             /** CODE HERE */
             // TO DO: construct a session object, insert it into
             // the list of sessions
-
+            SessionList.addToSesh(new SessionList(new Session(id, title, mentor, date, location, SessionList.listLength(sessions), maxParticipants), null), sessions);
             outputArea.setText("Session Added Successfully\n");
             // Clear the input fields
             clearFields();
