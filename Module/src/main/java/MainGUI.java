@@ -116,7 +116,7 @@ public class MainGUI extends JFrame {
             // the list of sessions
             Session newSession = new Session(id, title, mentor, date, location, 0, maxParticipants);
 
-            sessions = SessionList.addToSesh(newSession, sessions);
+            sessions = SessionList.insert(sessions, newSession);
             outputArea.setText("Session Added Successfully\n");
             // Clear the input fields
             clearFields();
