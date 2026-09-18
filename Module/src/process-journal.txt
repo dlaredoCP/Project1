@@ -22,3 +22,9 @@
 *End time*: 11:35pm
 *Description of changes*: accounted for the sessions variable to be in chronological order by changing addToList to insert
 --------------------------------------
+*Name*: Riley Lorentzen
+*Date of change*: September 18
+*Start time*: 12:54am
+*End time*:  1:56am
+*Description of changes*: Completed searchSession, wrote searchByID in SessionList, and searchByMentor in SessionList. Completed removeSession; wrote the remove method in SessionList. Changed addCurrCount; wrote registerParticipant.
+--------------------------------------
