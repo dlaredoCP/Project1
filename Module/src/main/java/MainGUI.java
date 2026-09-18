@@ -116,7 +116,7 @@ public class MainGUI extends JFrame {
             // the list of sessions
             Session newSession = new Session(id, title, mentor, date, location, 0, maxParticipants);
 
-            sessions = SessionList.addToSesh(new SessionList(newSession, null), sessions);
+            sessions = SessionList.addToSesh(newSession, sessions);
             outputArea.setText("Session Added Successfully\n");
             // Clear the input fields
             clearFields();
@@ -131,7 +131,6 @@ public class MainGUI extends JFrame {
         // iterate over sessions; display each one
         // to the output window, using the `append`
         // method of the outputArea.
-
         // between each one, print a separator line,
         // as e.g.
         outputArea.setText(SessionList.listSessions(sessions));
