@@ -16,3 +16,9 @@
 *End time*: 3:40pm
 *Description of changes*: Added addCurrCount method in Session.java, finished displaySession and addSession, changed Session.java from record to class to change variables, created listSessions and listSession in SessionList and Session respectively
 --------------------------------------
+*Name*: Diego Laredo
+*Date of change*: September 17
+*Start time*: 11:00pm
+*End time*: 11:35pm
+*Description of changes*: accounted for the sessions variable to be in chronological order by changing addToList to insert
+--------------------------------------

@@ -11,15 +11,17 @@ public record SessionList (Session sesh, SessionList seshlist){
         }
     }
 
+    /** Returns SessionList's sesh variable */
     public Session getSession(){
         return this.sesh;
     }
 
+    /** Returns SessionList's seshlist variable */
     public SessionList getSessionList(){
         return this.seshlist;
     }
 
-    /** Accepts Session and SessionList objects and inserts the Session to the aforementioned SessionList object in chronological order*/
+    /** Accepts Session and SessionList objects and inserts the Session to the aforementioned SessionList object in chronological order */
     public static SessionList insert(SessionList lst, Session session) {
 
         if (lst== null) {
