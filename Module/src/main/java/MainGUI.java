@@ -115,9 +115,12 @@ public class MainGUI extends JFrame {
             // TO DO: construct a session object, insert it into
             // the list of sessions
             Session newSession = new Session(id, title, mentor, date, location, 0, maxParticipants);
-
-            sessions = SessionList.insert(sessions, newSession);
-            outputArea.setText("Session Added Successfully\n");
+            if (SessionList.searchByID(newSession.getID(), sessions)==null) {
+                sessions = SessionList.insert(sessions, newSession);
+                outputArea.setText("Session Added Successfully\n");
+            } else {
+                outputArea.setText("The Session ID already exists. Please try again!\n");
+            }
             // Clear the input fields
             clearFields();
         }

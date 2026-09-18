@@ -25,16 +25,13 @@ public record SessionList (Session sesh, SessionList seshList){
 
     /** Accepts Session and SessionList objects and inserts the Session to the aforementioned SessionList object in chronological order */
     public static SessionList insert(SessionList lst, Session session) {
-
-        if (lst== null) {
-            return new SessionList(session, null);
-        } else
-        if (session.getDate().compareToIgnoreCase(lst.getSession().getDate()) <= 0) {
-            return new SessionList(session, lst);
-        }
-        else {
-            return new SessionList(lst.getSession(), insert(lst.getSessionList(), session));
-        }
+            if (lst == null) {
+                return new SessionList(session, null);
+            } else if (session.getDate().compareToIgnoreCase(lst.getSession().getDate()) <= 0) {
+                return new SessionList(session, lst);
+            } else {
+                return new SessionList(lst.getSession(), insert(lst.getSessionList(), session));
+            }
     }
 
     /** Accepts a SessionList and returns a string that lists all the Session objects and their contents in that SessionList */
