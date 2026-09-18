@@ -64,8 +64,19 @@ public class Session{
     }
 
     /** Adds one to the number of current participants in the given Session object */
-    public static void addCurrCount(Session s){
-        s.currCount++;
+    public static boolean addCurrCount(Session s){
+        if (s!=null){
+            if (s.currCount < s.maxNum){
+                s.currCount++;
+                return true;
+            }
+            else  {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
     }
 
 }

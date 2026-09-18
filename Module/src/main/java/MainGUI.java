@@ -137,6 +137,7 @@ public class MainGUI extends JFrame {
     }
 
     // search by ID if presesnt, mentor otherwise, display results
+    /** Work time started 12:54AM */
     private void searchSession() {
         // Search by ID if the ID field is not empty
         if (!idField.getText().trim().isEmpty()) {
@@ -144,11 +145,13 @@ public class MainGUI extends JFrame {
             /** CODE HERE */
             // find session by ID, using a `searchByID` method
             // ... code here ...
-            /* if (result != null)
+            Session result = SessionList.searchByID(id,  sessions);
+            if (result != null){
+                outputArea.setText(Session.listSession(result));
+            }
                 // display session to the output area...
             else
                 outputArea.setText("Session not found.");
-             */
         }
         // Otherwise, search by mentor if the Mentor field is not empty
         else if (!mentorField.getText().trim().isEmpty()) {
@@ -157,12 +160,14 @@ public class MainGUI extends JFrame {
             // may be a list of sessions...
             /** CODE HERE */
             // ... code here ...
-            /*
-            if (result != null)
+            SessionList result = SessionList.searchByMentor(mentor,  sessions);
+            if (result != null){
+                outputArea.setText(SessionList.listSessions(result));
+            }
+
                 // display all sessions in the list
             else
                 outputArea.setText("No session found for mentor: " + mentor);
-             */
         }
         // Nothing entered
         else {
@@ -173,8 +178,17 @@ public class MainGUI extends JFrame {
     // given an id, remove that session from the list
     private void removeSession() {
         int id = Integer.parseInt(idField.getText());
-        // remove the session, print an error to the outputArea
-        // if it's not found
+        Session session = SessionList.searchByID(id,  sessions);
+        if (session != null) {
+            // remove the session, print an error to the outputArea
+            // if it's not found
+            sessions = SessionList.remove(session, sessions);
+            outputArea.setText("Session Removed successfully");
+        }
+        else {
+            outputArea.setText("Session not found.");
+        }
+
         /** CODE HERE */
         // ... code here ...
     }
@@ -184,6 +198,12 @@ public class MainGUI extends JFrame {
     private void registerParticipant() {
         int id = Integer.parseInt(idField.getText());
         // increment participants field of session,
+        if (Session.addCurrCount(SessionList.searchByID(id,  sessions))) {
+            outputArea.setText("Session Added Successfully");
+        }
+        else {
+            outputArea.setText("Session not found.");
+        }
         // print success or failure message.
     }
 
