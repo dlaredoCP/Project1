@@ -10,3 +10,9 @@
 *End time*:  1:30pm
 *Description of changes*: Created SessionList record, Session constructor test, and custom Session constructor that throws exception error when the date is in an incorrect format. Initialized SessionList sessions as a private variable and gave it a null value in the MainGUI. Completed addSession in MainGUI by making the new addToSesh and length methods in SessionList.
 --------------------------------------
+*Name*: Diego Laredo
+*Date of change*: September 17
+*Start time*: 12:15pm
+*End time*: 3:40pm
+*Description of changes*: Added addCurrCount method in Session.java, finished displaySession and addSession, changed Session.java from record to class to change variables, created listSessions and listSession in SessionList and Session respectively
+--------------------------------------

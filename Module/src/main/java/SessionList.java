@@ -8,14 +8,30 @@ public record SessionList (Session sesh, SessionList seshlist){
         }
     }
 
-    public static void addToSesh(SessionList addedList, SessionList lst){
-        switch (lst){
+    public Session getSesh(){
+        return this.sesh;
+    }
+
+    public SessionList getSeshList(){
+        return this.seshlist;
+    }
+
+
+    public static SessionList addToSesh(SessionList addedList, SessionList lst){
+        switch (lst) {
             case null:
-                throw new IllegalArgumentException("The list that you want to add to is null");
+                return addedList;
             case SessionList(Session s, SessionList r):
-                if (r==null){
-                    r=addedList;
-                }
+                return new SessionList(s, addToSesh(addedList, r));
+        }
+    }
+
+    public static String listSessions(SessionList sList){
+        switch (sList) {
+            case null:
+                return "";
+            case SessionList(Session s, SessionList r):
+                return Session.listSession(s) + "\n--------------------" + listSessions(r);
         }
     }
 }

@@ -23,7 +23,7 @@ public class MainGUI extends JFrame {
         // set sessions to a new empty list:
         // sessions = ...
             /** second change */
-        sessions = new SessionList(null, null);
+        sessions = null;
 
         setTitle("Employee Mentorship and Inclusion Manager");
         setSize(600, 600);
@@ -114,7 +114,9 @@ public class MainGUI extends JFrame {
             /** CODE HERE */
             // TO DO: construct a session object, insert it into
             // the list of sessions
-            SessionList.addToSesh(new SessionList(new Session(id, title, mentor, date, location, SessionList.listLength(sessions), maxParticipants), null), sessions);
+            Session newSession = new Session(id, title, mentor, date, location, 0, maxParticipants);
+
+            sessions = SessionList.addToSesh(new SessionList(newSession, null), sessions);
             outputArea.setText("Session Added Successfully\n");
             // Clear the input fields
             clearFields();
@@ -126,16 +128,13 @@ public class MainGUI extends JFrame {
 
     // display all sessions in the output area
     private void displaySessions() {
-        outputArea.setText("");
-
         // iterate over sessions; display each one
         // to the output window, using the `append`
         // method of the outputArea.
 
         // between each one, print a separator line,
         // as e.g.
-
-        outputArea.append("\n--------------------\n");
+        outputArea.setText(SessionList.listSessions(sessions));
     }
 
     // search by ID if presesnt, mentor otherwise, display results
