@@ -19,7 +19,7 @@ public record SessionList (Session sesh, SessionList seshlist){
         }
     }
 
-    /** Accepts a SsessionList and returns a string that lists all the Session objects and their contents in that SessionList */
+    /** Accepts a SessionList and returns a string that lists all the Session objects and their contents in that SessionList */
     public static String listSessions(SessionList sList){
         switch (sList) {
             case null:
