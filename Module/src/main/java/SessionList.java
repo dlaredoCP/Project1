@@ -43,6 +43,8 @@ public record SessionList (Session sesh, SessionList seshList){
                 return Session.listSession(s) + "\n--------------------" + listSessions(r);
         }
     }
+
+    /** Accepts an ID number that the method looks for in the given SessionList object and returns the Session that matches that ID */
     public static Session searchByID(int id, SessionList sList){
         switch(sList) {
             case null:
@@ -57,6 +59,8 @@ public record SessionList (Session sesh, SessionList seshList){
 
         }
     }
+
+    /** Accepts a Mentor name that the method looks for in the given SessionList object and returns a SessionList of all Sessions with that Mentor */
     public static SessionList searchByMentor(String mentor, SessionList sList){
         switch(sList) {
             case null:
@@ -71,6 +75,8 @@ public record SessionList (Session sesh, SessionList seshList){
 
         }
     }
+
+    /** Removes a session by ID, if one is present with the ID given in the ID input field */
     public static SessionList remove(Session session, SessionList sList){
         if (session == null){
             return null;

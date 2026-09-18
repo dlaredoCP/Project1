@@ -11,18 +11,18 @@ public class MainGUI extends JFrame {
 
     private JTextArea outputArea;
 
-    /** CODE HERE */
     // there should be a private member variable named `sessions` :
     // private SomethingOrOther sessions;
-        /** first change */
+
     private SessionList sessions;
 
     // the constructor for the class. This will initialize
     // the class's member variables:
+
     public MainGUI() {
         // set sessions to a new empty list:
         // sessions = ...
-            /** second change */
+
         sessions = null;
 
         setTitle("Employee Mentorship and Inclusion Manager");
@@ -111,7 +111,6 @@ public class MainGUI extends JFrame {
             String location = locationField.getText();
             int maxParticipants = Integer.parseInt(maxField.getText());
 
-            /** CODE HERE */
             // TO DO: construct a session object, insert it into
             // the list of sessions
             Session newSession = new Session(id, title, mentor, date, location, 0, maxParticipants);
@@ -140,12 +139,10 @@ public class MainGUI extends JFrame {
     }
 
     // search by ID if presesnt, mentor otherwise, display results
-    /** Work time started 12:54AM */
     private void searchSession() {
         // Search by ID if the ID field is not empty
         if (!idField.getText().trim().isEmpty()) {
             int id = Integer.parseInt(idField.getText().trim());
-            /** CODE HERE */
             // find session by ID, using a `searchByID` method
             // ... code here ...
             Session result = SessionList.searchByID(id,  sessions);
@@ -161,7 +158,6 @@ public class MainGUI extends JFrame {
             String mentor = mentorField.getText().trim();
             // find session by mentor. In this case, the result
             // may be a list of sessions...
-            /** CODE HERE */
             // ... code here ...
             SessionList result = SessionList.searchByMentor(mentor,  sessions);
             if (result != null){
@@ -191,8 +187,6 @@ public class MainGUI extends JFrame {
         else {
             outputArea.setText("Session not found.");
         }
-
-        /** CODE HERE */
         // ... code here ...
     }
 
